@@ -6,9 +6,9 @@ var Promise = require('bluebird'),
 	nodemailer = require('nodemailer'),
 	htmlToText = require('nodemailer-html-to-text').htmlToText;
 
-var Local = function(){
+var Local = function(configs){
     // configure transporter
-    var configs = sails.config.email || {
+    var configs = configs || {
 		"host": "localhost",
 		"port": 25,
 		"ignoreTLS": true
